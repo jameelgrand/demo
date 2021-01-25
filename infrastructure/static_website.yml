@@ -26,6 +26,9 @@ Resources:
                 - /*
       Bucket: !Ref S3Bucket
 Outputs:
+  BucketName:
+    Value: !Ref S3Bucket
+    Description: BucketName
   WebsiteURL:
     Value: !GetAtt 
       - S3Bucket
