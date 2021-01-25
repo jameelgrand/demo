@@ -1,7 +1,16 @@
 pipeline {
-    agent { dockerfile true }
+    agent none
     stages {
+        stage('Code Coverage') {
+            agent { dockerfile "./node.Dockerfile" }
+            steps {
+                sh '''npm install
+                ./node_modules/.bin/grunt
+                '''
+            }
+        }
         stage('Infrastructure') {
+            agent { dockerfile true }
             steps {
                 sh '''cd infrastructure
                 chmod +x launch.sh
@@ -10,6 +19,7 @@ pipeline {
             }
         }
         stage('Build and Deploy') {
+            agent { dockerfile true }
             steps {
                 sh '''cd application
                 BUCKET_NAME=$(aws cloudformation describe-stacks --region us-east-1 --stack-name staticwebsite --query "Stacks[0].Outputs[?OutputKey=='BucketName'].OutputValue" --output text)
