@@ -48,4 +48,4 @@ To start Jenkins use the following command from within the ```jenkins``` directo
 
 Your Jenkins instance will be available on port 8080 
 
-we need Docker Pipeline and pipeline plugins to be installed.
+We need Git ,Docker Pipeline and pipeline plugins to be installed.
