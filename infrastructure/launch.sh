@@ -73,7 +73,7 @@ BUCKET_NAME=$(aws cloudformation describe-stacks --region $1 --stack-name $2 --q
 
 echo "Deploying application.........."
 
-aws s3 sync ../applicatio/ s3://BUCKET_NAME
+aws s3 sync ../application/ s3://BUCKET_NAME
 
 website_url=$(aws cloudformation describe-stacks --region $1 --stack-name $2 --query "Stacks[0].Outputs[?OutputKey=='WebsiteURL'].OutputValue" --output text)
 
