@@ -9,7 +9,7 @@ pipeline {
                 '''
             }
         }
-        stage('Infrastructure') {
+        stage('Deploy') {
             steps {
                 sh '''cd application
                 BUCKET_NAME=$(aws cloudformation describe-stacks --region us-east-1--stack-name staticwebsite --query "Stacks[0].Outputs[?OutputKey=='BucketName'].OutputValue" --output text)
