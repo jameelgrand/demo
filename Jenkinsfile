@@ -2,7 +2,11 @@ pipeline {
     agent none
     stages {
         stage('Code Coverage') {
-            agent { dockerfile "./node.Dockerfile" }
+            agent { 
+                dockerfile {
+                    filename 'node.Dockerfile'
+                }
+            }
             steps {
                 sh '''npm install
                 ./node_modules/.bin/grunt
