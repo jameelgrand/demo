@@ -15,3 +15,5 @@
         "grunt-contrib-csslint": "*",
         "grunt-parallel-behat" : "*"
 }
+
+}
