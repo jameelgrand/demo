@@ -47,3 +47,5 @@ To start Jenkins use the following command from within the ```jenkins``` directo
 ```sudo cat ~/Jenkins/secrets/initialAdminPassword```
 
 Your Jenkins instance will be available on port 8080 
+
+we need Docker Pipeline and pipeline plugins to be installed.

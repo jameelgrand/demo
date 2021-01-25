@@ -20,3 +20,4 @@ RUN pip install --upgrade pip
 # install selenium
 RUN pip install selenium
 RUN pip install pytest
+RUN pip install awscli 
